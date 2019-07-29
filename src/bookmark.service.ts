@@ -19,6 +19,15 @@ export class BookmarkService {
             .toPromise();
     }
 
+    updateBookmark(bookmark) {
+        const json = JSON.stringify({
+            Title: bookmark.Title,
+            Url: bookmark.Url
+        });
+        return this.http.patch(`${this.baseUrl}/bookmarks/${bookmark.id}.json`, json)
+            .toPromise();
+    }
+
     getBookmarks() {
         return this.http.get(`${this.baseUrl}/bookmarks.json`)
             .toPromise()
