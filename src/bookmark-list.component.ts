@@ -11,9 +11,18 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
             {{bookmark.Title}}
           </a>
         </td>
+        <td class="hidden-xs hidden-sm">
+          {{bookmark.Url}}
+        </td>
         <td>
-          <button (click)="onRemove(bookmark)" class="btn btn-danger">Usuń</button>
-          <button (click)="onEdit(bookmark)" class="btn btn-warning">Edytuj</button>
+          <button (click)="onRemove(bookmark)" class="btn btn-danger">
+          <span class="glyphicon glyphicon-trash"></span>
+              <span class="hidden-xs">Usuń</span>
+          </button>
+          <button (click)="onEdit(bookmark)" class="btn btn-warning">
+            <span class="glyphicon glyphicon-pencil"></span>
+            <span class="hidden-xs">Edytuj</span>
+          </button>
         </td>
       </tr>
     </table>
